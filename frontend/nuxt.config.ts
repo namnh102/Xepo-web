@@ -2,6 +2,11 @@ import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   ssr: false,
+  nitro: {
+    prerender: {
+      routes: ['/']
+    }
+  },
   modules: [],
   // Ensure a stable compatibility date and default dev server port to avoid conflicts with backend
   compatibilityDate: '2025-09-30',
@@ -13,7 +18,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBase: process.env.API_BASE || 'http://localhost:3000'
+      apiBase: process.env.API_BASE || 'https://xepo-backend.onrender.com'
     }
   }
 })
